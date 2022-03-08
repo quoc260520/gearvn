@@ -705,7 +705,7 @@
                      </div>
                  </div>
 
-                 <div class="grid__row">
+                <div class="grid__row">
                     <div class="content__product ">
                         <div class="content__product-header" >
                             <h2 class="content__product-header__heading">Top Pc Bán Chạy</h2>
@@ -723,234 +723,24 @@
 
                         <div class="content__product-wrap content__product-slider">
                             <div class="content__product-list content__product-list--nowrap">
-                             
-                                <div class=".grid__column-2">
-                               <div class="content__product-item-wrap">
-                                   <a href="" class="content__product-item-link">
-                                       <div class="content__product-item">
-                                           <img src="https://gstatic.gearvn.com/2021/09/eGIpZbuj-GEARVN-pc-gaming-titan-M-300x300.jpeg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                           <h3 class="content__product-item__name">PC GVN AXE M</h3>
-                                       </div>
-                                   </a>
-                                   <div class="content__product-item__price-wrap">
-                                       <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                   </div>
-
-                               </div>
-                                </div>
-                                <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                        <a href="" class="content__product-item-link">
-                                            <div class="content__product-item">
-                                                <img src="https://gstatic.gearvn.com/2021/09/eGIpZbuj-GEARVN-pc-gaming-titan-M-300x300.jpeg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                                <h3 class="content__product-item__name">PC GVN AXE M</h3>
-                                            </div>
-                                        </a>
-                                        <div class="content__product-item__price-wrap">
-                                            <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                        </div>
-     
-                                    </div>
-                                     </div>
-                                     <div class=".grid__column-2">
+                                @foreach($listPc as $item)
+                                    <div class=".grid__column-2">
                                         <div class="content__product-item-wrap">
-                                            <a href="" class="content__product-item-link">
+                                            <a href="{{route('product-detail',['id' => $item->product_id]) }}" class="content__product-item-link">
                                                 <div class="content__product-item">
-                                                    <img src="https://gstatic.gearvn.com/2021/09/eGIpZbuj-GEARVN-pc-gaming-titan-M-300x300.jpeg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                                    <h3 class="content__product-item__name">PC GVN AXE M</h3>
+                                                    <img src="{{ asset('/image/product/'.$item->product_image) }}" alt="" class="content__product-item__img content__product-item__img--full_width">
+                                                    <h3 class="content__product-item__name">{{ $item->product_name }}</h3>
                                                 </div>
                                             </a>
                                             <div class="content__product-item__price-wrap">
-                                                <p class="content__product-item__price">  24.390.000<span>đ</span></p>
+                                                <p class="content__product-item__price">{{ $item->product_price }}<span>đ</span></p>
                                             </div>
-         
+        
                                         </div>
-                                         </div>
-                                <div class=".grid__column-2">
-                                   <div class="content__product-item-wrap">
-                                   <a href="" class="content__product-item-link">
-                                       <div class="content__product-item">
-                                           <img src="https://gstatic.gearvn.com/2021/09/eGIpZbuj-GEARVN-pc-gaming-titan-M-300x300.jpeg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                           <h3 class="content__product-item__name">PC GVN AXE M</h3>
-                                       </div>
-                                   </a>
-                                   <div class="content__product-item__price-wrap">
-                                       <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                   </div>
-
-                                   </div>
-                                </div>
-                                <div class=".grid__column-2">
-                                   <div class="content__product-item-wrap">
-                                   <a href="" class="content__product-item-link">
-                                       <div class="content__product-item">
-                                           <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                           <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                       </div>
-                                   </a>
-                                   <div class="content__product-item__price-wrap">
-                                       <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                   </div>
-                                   </div>
-
-                                  
-                                </div>
-
-                                <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
                                     </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/10/De6ymhgm-GVN-Ivy-10-M-300x300.jpg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN IVY M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">  24.390.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                                 <div class=".grid__column-2">
-                                    <div class="content__product-item-wrap">
-                                    <a href="" class="content__product-item-link">
-                                        <div class="content__product-item">
-                                            <img src="https://gstatic.gearvn.com/2021/09/eGIpZbuj-GEARVN-pc-gaming-titan-M-300x300.jpeg" alt="" class="content__product-item__img content__product-item__img--full_width">
-                                            <h3 class="content__product-item__name">PC GVN TITAN M</h3>
-                                        </div>
-                                    </a>
-                                    <div class="content__product-item__price-wrap">
-                                        <p class="content__product-item__price">26.000.000<span>đ</span></p>
-                                    </div>
-                                    </div>
- 
-                                   
-                                 </div>
-                            
-                                
-                             
+                                @endforeach
                             </div>
-                        </div>
+                       </div>
                     </div>
                 </div>
 

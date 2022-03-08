@@ -625,6 +625,7 @@
 .modal_product-slider-img__modal-info__img img{
     width: 100%;
     height:auto;
+    padding: 30px 20px;
 }
 .modal_product-slider-img__modal-info_header{
     font-size: 2rem;

@@ -43,7 +43,7 @@ Route::prefix('index')->group(function () {
     Route::post('/search', [SearchController::class, 'postSearch'])->name('index.post-search');
     Route::get('/payment', [HomeController::class, 'getPayment'])->name('payment');
     Route::get('/payment_method', [HomeController::class, 'getPaymentMethod'])->name('payment_method');
-
+    Route::get('/login', [HomeController::class, 'getIndex'])->name('login-user');
 });
 
 ///Admin

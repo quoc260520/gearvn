@@ -3,7 +3,7 @@
     </div>
     <div class="modal__body">
         <!-- Modal login -->
-        <div class="modal__body-login modal__body-form">
+        <div class="modal__body-login modal__body-form ">
            <div class="modal__body-form-close btn-close-js">
                <i class="fas fa-times modal__body-form-close-icon"></i>
                <i class="fas fa-minus modal__body-form-close-icon"></i>

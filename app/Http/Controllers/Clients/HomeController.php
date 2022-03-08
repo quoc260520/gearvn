@@ -7,6 +7,7 @@ use App\Models\SliderBanner;
 use App\Models\SliderTop;
 use App\Models\SliderFlashSale;
 use App\Models\Product;
+use App\Models\SliderTopPC;
 
 class HomeController extends Controller
 { 
@@ -16,12 +17,15 @@ class HomeController extends Controller
         $this->sliderTop = new SliderTop();
         $this->flashSale = new SliderFlashSale();
         $this->product = new Product();
+        $this->topPc = new SliderTopPc();
     }
     public function getIndex(){
         $listSliderTop = $this->sliderTop->getSlider();
         $listSliderBanner = $this->sliderBanner->getSlider();
         $listProductFlS = $this->flashSale->getAllProductFlS();
-        return view('clients.index',compact('listSliderBanner','listSliderTop','listProductFlS'));
+        $listPc = $this->topPc->getPc();
+        $data = 'style="display:flex;"';
+        return view('clients.index',compact('listSliderBanner','listSliderTop','listProductFlS','listPc','data'));
 
     }
     public function getProductDetails($id){
