@@ -6,8 +6,8 @@
             GEARVN.COM
         </h1>
         <div class="payment__container-left__path">
-            <a href="" class="payment__container-left__path-link">Giỏ hàng</a> <span class="payment__container-left__path-icon"> <i class="fas fa-chevron-right"></i></span>
-            <a href="" class="payment__container-left__path-link">Thông tin thanh toán</a> <span class="payment__container-left__path-icon"> <i class="fas fa-chevron-right"></i></span>
+            <a href="{{ route('index.cart') }}" class="payment__container-left__path-link payment__container-left__path-link--blue">Giỏ hàng</a> <span class="payment__container-left__path-icon"> <i class="fas fa-chevron-right"></i></span>
+            <a href="{{ route('payment') }}" class="payment__container-left__path-link payment__container-left__path-link--blue">Thông tin thanh toán</a> <span class="payment__container-left__path-icon"> <i class="fas fa-chevron-right"></i></span>
             <a href="" class="payment__container-left__path-link">Phương thức thanh toán</a>
             
         </div>

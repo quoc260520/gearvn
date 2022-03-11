@@ -37,7 +37,7 @@
     <div class="header-width-search">
                <div class="grid header-width-search-wrap">
                    <div class="header__logo">
-                       <a href="#" class="header__logo-link">
+                       <a href="{{ route('index') }}" class="header__logo-link">
                            <img src="https://gstatic.gearvn.com/2021/08/Logo-GEARVN_pc-300x70-1-1.png" alt="GEARVN" class="header__logo-img">
                        </a>
                    </div>
@@ -86,11 +86,13 @@
                       </ul>
 
                   </div>
-                  <div class="header__search-cart">
-                      <i class="fas fa-shopping-cart header__search-cart-icon"></i>
-                      <span class="header__search-cart-number">0</span>
-                      <span class="header__search-cart-text">Giỏ hàng</span>
-                  </div>
+                    <a href="{{ route('index.cart') }}"class="header__search-cart-link">
+                    <div class="header__search-cart">
+                        <i class="fas fa-shopping-cart header__search-cart-icon"></i>
+                        <span class="header__search-cart-number">{{ Session('Cart')->totalQuantity ?? 0 }}</span>
+                        <span class="header__search-cart-text">Giỏ hàng</span>
+                    </div>
+                    </a>
                </div>
 
 

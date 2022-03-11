@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('fonts/fontawesome-free-5.15.4-web/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
-    <title>{{ $title }}</title>
+    <title>{{ $data['title'] }}</title>
 </head>
 <body>
      <div class="app">

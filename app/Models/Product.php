@@ -21,10 +21,10 @@ class Product extends Model
         return $list;
      }
     public function getOnlyProduct($id) {
-        $category = DB::table(''.$this->table.'')
+        $product = DB::table(''.$this->table.'')
         ->where('id', '=', $id)
-        ->first();
-        return $category;
+        ->get();
+        return $product;
      }
     public function addProduct($data) {
         return DB::insert('insert into '.$this->table.'

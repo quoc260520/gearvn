@@ -32,6 +32,7 @@ class HomeController extends Controller
         $this->data['title'] = "Chi tiết sản phẩm" ;
         $data = $this->data;
         $product = $this->product->getOnlyProduct($id);
+        $product=$product[0];
         $listImg = $this->product->getImages($id);
         $listSliderBanner = $this->sliderBanner->getSlider();
         return view('clients.product.product_details',compact('product','data','listImg','listSliderBanner'));

@@ -41,14 +41,17 @@
                             </div>
                             @if($product->status === 'con')
                             <div class="product__info-stock">{{ $product->status }}</div>
-                            <div class="btn product__info-btn-buy">
+                            <a  href="{{ route('index.add-cart',['id' =>$product->id]) }}" class="btn product__info-btn-buy">
                                 <div class="product__info-btn-buy-header">
                                     <i class="fas fa-cart-arrow-down product__info-btn-buy__icon"></i>
                                     <h2 class="product__info-btn-buy-heading">Mua hàng</h2>
                                 </div>
                                 <div class="product__info-btn-buy-shipping">Giao hàng tận nơi hoặc nhận tại siêu thị</div>
-                            </div>
+                            </a>
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                          
                             @else
+                            
                             <div class="product__info-outofstock">Hết hàng tạm thời</div>
                             @endif
 
@@ -273,4 +276,15 @@
     
  </div>
  @include('clients.product.modal_product')
+ {{-- Ajax --}}
+ <script type="text/javascript">
+    function AddCart(id){
+        $.ajax({
+            url:'/index/add-cart/'+id,
+            type:'GET',
+        }).done(function(response){
+            console.log(response);
+        });
+    }
+ </script>
 @endsection

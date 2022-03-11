@@ -128,7 +128,7 @@ class ProductAdminController extends Controller
             $product = $this->product->getOnlyProduct($id);
             if(!empty($product)){
                 $request->session()->put('id',$id);
-                $product = $product;
+                $product = $product[0];
                 $categoryProduct = $this->categoryProduct->getOnlyCategoryProduct($product->category_product_id);
                 $categoryProduct = $categoryProduct[0];
                 $listCategoryProduct = $this->categoryProduct->getCategoryProductOther($product->category_product_id);
