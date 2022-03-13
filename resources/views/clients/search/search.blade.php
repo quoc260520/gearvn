@@ -20,9 +20,17 @@
                <div class="content__search-product-container">
                    <div class="content__search-product-sort">
                        <span class="content__search-product-sort__text">Sắp xếp theo:</span>
-                       <a href="" class="link"><button class="content__search-product-sort__btn">Bán chạy</button></a>
-                       <a href="" class="link"><button class="content__search-product-sort__btn">Giá thấp đến cao </button></a>
-                       <a href="" class="link"><button class="content__search-product-sort__btn">Giá cao đến thấp</button></a>
+                       <form action="" method="get">
+                       <a href="" class="link"><button class="content__search-product-sort__btn {{ $data['no-sort'] }}">Bán chạy</button></a>
+                       </form>
+                       <form action="" method="get">
+                        <input type="hidden" name="sort_desc" value="DESC">
+                       <a href="" class="link"><button class="content__search-product-sort__btn {{ $data['sort-desc'] }}">Giá cao đến thấp </button></a>
+                       </form>
+                       <form action="" method="get">
+                        <input type="hidden" name="sort_asc" value="ASC">
+                       <a href="" class="link"><button class="content__search-product-sort__btn {{ $data['sort-asc'] }}">Giá thấp đến cao</button></a>
+                       </form>
                    </div>
 
                    <div class="content__search-product">

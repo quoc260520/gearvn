@@ -67,9 +67,12 @@
 .content__search-product-sort{
     padding: 20px 15px;
     font-size: 1.4rem;
+    display: flex;
+    align-items: center;
 }
 .content__search-product-sort__text{
     padding-right: 20px;
+
 
 }
 .content__search-product-sort__btn{
@@ -80,6 +83,7 @@
     font-weight: 600;
     padding: 5px;
     border-radius: 4px;
+    margin-right: 10px;
 }
 .content__search-product{
     display: flex;
@@ -114,4 +118,8 @@
 }
 .content__product-pages__btn:hover{
     background-color: #e2e0e0;
+}
+.active{
+    color:#fff;
+    background-color: red;
 }

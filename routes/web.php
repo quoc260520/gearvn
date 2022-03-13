@@ -47,7 +47,7 @@ Route::prefix('index')->group(function () {
     Route::get('/delete-cart/{id}', [CartController::class, 'deleteCart'])->name('index.delete-cart');
     Route::get('/update-cart/{id}', [CartController::class, 'updateCart'])->name('index.update-cart');
     Route::get('/update-cart-add/{id}', [CartController::class, 'updateCartAdd'])->name('index.update-cart-add');
-    Route::get('/search', [SearchController::class, 'postSearch'])->name('index.search');
+    Route::get('/search', [SearchController::class, 'getSearch'])->name('index.search');
     Route::post('/search', [SearchController::class, 'postSearch'])->name('index.post-search');
     Route::get('/payment', [PaymentController::class, 'getPayment'])->name('payment');
     Route::post('/payment', [PaymentController::class, 'postPayment'])->name('post-payment');

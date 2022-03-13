@@ -1,16 +1,16 @@
-var btns = document.querySelectorAll('.content__search-product-sort__btn')
-btns[0].style.backgroundColor = 'red'
-btns[0].style.color = '#fff'
-btns.forEach(function(btn){
-    btn.onclick = function(){
-        btns.forEach(function(e){
-            e.style.backgroundColor = '#fff'
-            e.style.color = '#000'
-        })
-        btn.style.backgroundColor = 'red'
-        btn.style.color = '#fff'
-    }
-})
+// var btns = document.querySelectorAll('.content__search-product-sort__btn')
+// btns[0].style.backgroundColor = 'red'
+// btns[0].style.color = '#fff'
+// btns.forEach(function(btn){
+//     btn.onclick = function(){
+//         btns.forEach(function(e){
+//             e.style.backgroundColor = '#fff'
+//             e.style.color = '#000'
+//         })
+//         btn.style.backgroundColor = 'red'
+//         btn.style.color = '#fff'
+//     }
+// })
 
 // var pageBtns = document.querySelectorAll('.content__product-pages__btn')
 // pageBtns[0].style.backgroundColor = 'red'
