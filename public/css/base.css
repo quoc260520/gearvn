@@ -498,3 +498,112 @@ html {
 .link{
     text-decoration: none;
 }
+.success{
+    height: 60px;
+    color: #155724;
+    background-color: #d4edda;
+    width: 80%;
+    border-radius:4px;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.error{
+    color: #721c24;
+    background-color: #f8d7da;
+    height: 60px;
+    width: 80%;
+    border-radius:4px;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.content__product-pages{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-bottom: 50px;
+}
+.content__product-pages__btn{
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #e7e5e5;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+.content__product-pages__btn--active {
+    background-color:red;
+    color:#fff;
+}
+.content__product-pages__btn:hover{
+    background-color: #e2e0e0;
+}
+.btn-warning{
+    min-width: 120px;
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    font-size: 1.6rem;
+    font-weight: 400;
+    height:40px;
+    line-height: 1.6rem;
+    border-radius: 3px;
+    outline: none;
+    padding:0 12px;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn-success{
+    min-width: 120px;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    font-size: 1.6rem;
+    font-weight: 400;
+    height:40px;
+    line-height: 1.6rem;
+    border-radius: 3px;
+    outline: none;
+    padding:0 12px;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.btn-primary{
+    min-width: 120px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    height:40px;
+    line-height: 1.6rem;
+    border-radius: 3px;
+    outline: none;
+    padding:0 12px;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}

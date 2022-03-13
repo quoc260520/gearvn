@@ -29,7 +29,7 @@
                 <span class="admin_side-bar__list-item-text">Sản phẩm</span>
             </li>
         </a>
-        <a href="{{ route('home') }}" class="admin__link">
+        <a href="{{ route('orders') }}" class="admin__link">
             <li class="admin_side-bar__list-item {{ $data['bg_order_sidebar'] }}">
                 <i class="fas fa-chart-pie admin__slider-bar__list-item__icon"></i>
                 <span class="admin_side-bar__list-item-text">Đơn hàng</span>

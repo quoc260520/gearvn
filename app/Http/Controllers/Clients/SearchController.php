@@ -20,6 +20,7 @@ class SearchController extends Controller
         $this->data['title'] = "Tim kiem" ;
         $data = $this->data;
         $listSliderBanner = $this->sliderBanner->getSlider();
+        dd($listProduct);
         return view('clients.search.search',compact('data','listSliderBanner','listProduct'));
     }
 }

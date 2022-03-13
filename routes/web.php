@@ -11,9 +11,11 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Category\CategoryLocalController;
 use App\Http\Controllers\Admin\Category\CategoryProductController;
+use App\Http\Controllers\Admin\Orders\OrdersController;
 use App\Http\Controllers\Clients\SearchController;
 use App\Http\Controllers\Clients\CartController;
 use App\Http\Controllers\Clients\PaymentController;
+
 
 
 /*
@@ -48,8 +50,13 @@ Route::prefix('index')->group(function () {
     Route::get('/search', [SearchController::class, 'postSearch'])->name('index.search');
     Route::post('/search', [SearchController::class, 'postSearch'])->name('index.post-search');
     Route::get('/payment', [PaymentController::class, 'getPayment'])->name('payment');
-    Route::get('/get-district/{id}', [PaymentController::class, 'getDistrict'])->name('get-district');
+    Route::post('/payment', [PaymentController::class, 'postPayment'])->name('post-payment');
     Route::get('/payment_method', [PaymentController::class, 'getPaymentMethod'])->name('payment_method');
+    Route::post('/payment_method', [PaymentController::class, 'postPaymentMethod'])->name('post-payment_method');
+
+
+    Route::post('/get-district', [PaymentController::class, 'getDistrict'])->name('get-district');
+
     Route::get('/login', [HomeController::class, 'getIndex'])->name('login-user');
 });
 
@@ -127,5 +134,11 @@ Route::middleware('check.role')->prefix('admin')->group(function () {
         Route::post('/post-update', [UserAdminController::class, 'postUpdateUser'])->name('user.post-update');
         Route::get('/delete/{id}', [UserAdminController::class, 'deleteUser'])->name('user.delete');
     });
+    Route::prefix('orders')->group(function (){
+        Route::get('/', [OrdersController::class,'getOrder'])->name('orders');
+        Route::get('/order-info/{id}', [OrderOrdersController::class,'getInfoOrder'])->name('orders.info');
+        Route::get('/update-order/{id}/{status}', [OrdersController::class,'getUpdate'])->name('orders.post-update');
+    });
+   
 
 });

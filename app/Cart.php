@@ -77,6 +77,11 @@ namespace App;
            $this->totalPrice -= (int)str_replace('.','',$this->products[$id]['price']);
            unset($this->products[$id]);
        }
+       public function DeleteAllCart(){
+            $this->totalQuantity = 0;
+            $this->totalPrice =0;
+            unset($this->products);
+       }
        public function UpdateItemCart($id){
         if($this->products[$id]['quantity'] > 1){
         $this->totalQuantity --;

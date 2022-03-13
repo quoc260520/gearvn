@@ -40,7 +40,7 @@
                                 </ul>
                             </div>
                             @if($product->status === 'con')
-                            <div class="product__info-stock">{{ $product->status }}</div>
+                            {{-- <div class="product__info-stock">{{ $product->status }}</div> --}}
                             <a  href="{{ route('index.add-cart',['id' =>$product->id]) }}" class="btn product__info-btn-buy">
                                 <div class="product__info-btn-buy-header">
                                     <i class="fas fa-cart-arrow-down product__info-btn-buy__icon"></i>

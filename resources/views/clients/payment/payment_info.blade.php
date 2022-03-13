@@ -30,7 +30,7 @@
         <div class="payment__container-right__transport">
             <div class="payment__container-right__transport-price">
                 <p class="payment__container-right__transport-price__text">Tạm tính</p>
-                <div class="payment__container-right__transport-price--product">{{ Session::get('Cart')->totalPrice }}<span>đ</span> </div>
+                <div class="payment__container-right__transport-price--product">{{ Session::get('Cart')->totalPrice ?? 0}}<span>đ</span> </div>
             </div>
             <div class="payment__container-right__transport-price">
                 <p class="payment__container-right__transport-price__text">Phí vận chuyển</p>
@@ -41,7 +41,7 @@
             <div class="payment__container-right__total-text">Tổng cộng</div>
             <div class="payment__container-right__total-price-wrap">
                 <span class="payment__container-right__total-currency">VND</span>
-                <span class="payment__container-right__total-price">{{ Session::get('Cart')->totalPrice }}<span>đ</span></span>
+                <span class="payment__container-right__total-price">{{ Session::get('Cart')->totalPrice ?? 0 }}<span>đ</span></span>
             </div>
         </div>
 

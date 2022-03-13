@@ -72,7 +72,7 @@ input, select {
     outline-width: thick  ;
     border-radius:4px;
     padding: 5px 10px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
    
 }
 .payment__container-left__input-name{
@@ -84,15 +84,7 @@ input, select {
     flex-wrap: nowrap;
 
 }
-.payment__container-left__input-email{
-    flex:2;
-    margin-right: 10px;
 
-}
-.payment__container-left__input-phone{
-    flex:1;
-
-}
 
 .payment__container-left__select-conscious{
     flex:1;
@@ -121,7 +113,7 @@ input, select {
     color:#338dbc;
     height: 56px;
     line-height: 56px;
-    width: 150px;
+    width: 220px;
 }
 .btn-payment{
     height: 56px;
@@ -480,4 +472,20 @@ input, select {
     font-size: 1.5rem;
     color:var(--text-color);
     text-align:center;
+}
+.payment__container-left__form-col-2{
+    display: flex;
+    flex-direction: column;
+    height:50px;
+}
+.form-fl-2{
+    display: flex;
+    flex-direction: column;
+    flex:2;
+    margin-right: 15px;
+}
+.form-fl-1{
+    display: flex;
+    flex-direction: column;
+    flex:1;
 }

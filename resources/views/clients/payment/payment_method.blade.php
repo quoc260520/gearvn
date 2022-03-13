@@ -2,6 +2,12 @@
 @section('payment_method')
 <div class="payment__container-left">
     <div class="payment_method__container-left-wrap">
+        @if(session('msg'))
+          <p class="success">{{ session('msg') }} <a href="{{ route('index') }}" class="link" style="color:#155724;margin-left:3px;">Quay lại trang chủ</a></p>
+        @endif
+        @if(session('error'))
+          <p class="error">{{ session('error') }} <a href="{{ route('index.cart') }}" class="link" style="color:#721c24;margin-left:3px;">Quay lại giỏ hàng</a></p>
+        @endif
         <h1 class="payment__container-left__heading--top">
             GEARVN.COM
         </h1>
@@ -41,10 +47,13 @@
       
      
         <div class="payment__container-left__form">
+            <form action="{{ route('post-payment_method') }}" method="post" >
             <div class="payment__container-left__btn-wrap">
                 <a href="{{ route('payment') }}" class="payment__container-left__link--cart">Quay lại thông tin giao hàng</a>
                 <button class="btn btn-payment">Hoàn tất thanh toán</button>
-              </div>
+            </div>
+            @csrf
+            </form>
         </div>
       
     </div>
