@@ -13,84 +13,162 @@
         </div>
         <h2 class="payment__container-left__heading">Thông tin giao hàng</h2>
         @if(Session::has('dataCart'))
-        <form action="{{ route('post-payment') }}" method="post">
-        <div class="payment__container-left__form">
-            <input type="text" placeholder="Họ và tên" class="payment__container-left__input-name" name="full_name" value=" {{old('full_name') ?? Session('dataCart')['full_name'] }}">
-        </div>
-        @error('full_name')
-            <span class="erros mt_10">{{ $message }}</span>
-        @enderror
-        <div class="payment__container-left__form">
-            <div class="payment__container-left__input-info ">
-               <div class="form-fl-2">
-                <div class="payment__container-left__form-col-2">
-                    <input type="email" value="{{ old('email') ?? Session('dataCart')['email'] }}" placeholder="Email" class="payment__container-left__input-email" name="email">
+            <form action="{{ route('post-payment') }}" method="post">
+                <div class="payment__container-left__form">
+                    <input type="text" placeholder="Họ và tên" class="payment__container-left__input-name" name="full_name" value=" {{old('full_name') ?? Session('dataCart')['full_name'] }}">
                 </div>
-                @error('email')
+                @error('full_name')
                     <span class="erros mt_10">{{ $message }}</span>
                 @enderror
-               </div>
-               
-               <div class="form-fl-1">
-                    <div class="payment__container-left__form-col-2">
-                        <input type="text" value="{{ old('phone') ?? Session('dataCart')['phone'] }}" placeholder="Số điện thoại" class="payment__container-left__input-phone" name="phone">
+                <div class="payment__container-left__form">
+                    <div class="payment__container-left__input-info ">
+                    <div class="form-fl-2">
+                        <div class="payment__container-left__form-col-2">
+                            <input type="email" value="{{ old('email') ?? Session('dataCart')['email'] }}" placeholder="Email" class="payment__container-left__input-email" name="email">
+                        </div>
+                        @error('email')
+                            <span class="erros mt_10">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('phone')
-                        <span class="erros mt_10">{{ $message }}</span>
-                    @enderror
-               </div>
-            </div>
-        </div>
-       
-        <div class="payment__container-left__form">
-            <input type="text" value="{{ old('address') ?? Session('dataCart')['address'] }}" placeholder="Địa chỉ" class="payment__container-left__input-addres" name="address">
-        </div>
-        @error('address')
-            <span class="erros mt_10">{{ $message }}</span>
-        @enderror
-      
-        <div class="payment__container-left__form">
-            <div class="payment__container-left__select-info">
-                <div class="form-fl-1" style="margin-right: 10px;">
-                    <div class="payment__container-left__form-col-2">
-                        <select name="city" id="city" class="payment__container-left__select-conscious choose">
-                            <option value="">Chọn tỉnh / thành</option>
-                            @foreach($listCity as $city)
-                            <option value="{{ $city->matp }}">{{ $city->name }}</option>
-                            @endforeach
-                        </select> 
+                    
+                    <div class="form-fl-1">
+                            <div class="payment__container-left__form-col-2">
+                                <input type="text" value="{{ old('phone') ?? Session('dataCart')['phone'] }}" placeholder="Số điện thoại" class="payment__container-left__input-phone" name="phone">
+                            </div>
+                            @error('phone')
+                                <span class="erros mt_10">{{ $message }}</span>
+                            @enderror
                     </div>
-                    @error('city')
-                    <span class="erros mt_10">{{ $message }}</span>
-                    @enderror
+                    </div>
                 </div>
-
-                <div class="form-fl-1" style="margin-right: 5px;">
-                    <div class="payment__container-left__form-col-2">
-                        <select name="district" id="district" class="payment__container-left__select-district">
-                            <option value="">Chọn quận / huyện</option>
-                          </select>
-                    </div>
-                    @error('district')
+            
+                <div class="payment__container-left__form">
+                    <input type="text" value="{{ old('address') ?? Session('dataCart')['address'] }}" placeholder="Địa chỉ" class="payment__container-left__input-addres" name="address">
+                </div>
+                @error('address')
                     <span class="erros mt_10">{{ $message }}</span>
+                @enderror
+            
+                <div class="payment__container-left__form">
+                    <div class="payment__container-left__select-info">
+                        <div class="form-fl-1" style="margin-right: 10px;">
+                            <div class="payment__container-left__form-col-2">
+                                <select name="city" id="city" class="payment__container-left__select-conscious choose">
+                                    <option value="">Chọn tỉnh / thành</option>
+                                    @foreach($listCity as $city)
+                                    <option value="{{ $city->matp }}">{{ $city->name }}</option>
+                                    @endforeach
+                                </select> 
+                            </div>
+                            @error('city')
+                            <span class="erros mt_10">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form-fl-1" style="margin-right: 5px;">
+                            <div class="payment__container-left__form-col-2">
+                                <select name="district" id="district" class="payment__container-left__select-district">
+                                    <option value="">Chọn quận / huyện</option>
+                                </select>
+                            </div>
+                            @error('district')
+                            <span class="erros mt_10">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            
+                <div class="payment__container-left__form">
+                    <div class="payment__container-left__btn-wrap">
+                        <a href="{{ route('index.cart') }}" class="payment__container-left__link--cart">Giỏ hàng</a>
+                        <a href="{{ route('payment_method') }}" class="link"><button type="submit" class="btn btn-payment">Tiếp tục đến phương thức thanh toán</button></a>
+                    </div>
+                </div>
+                
+                <meta name="csrf-token" content="{{ csrf_token() }}">
+                @csrf
+            </form>
+        @else
+        <form action="{{ route('post-payment') }}" method="post">
+            <div class="payment__container-left__form">
+                <input type="text" placeholder="Họ và tên" class="payment__container-left__input-name" name="full_name" value=" {{old('full_name')  }}">
+            </div>
+            @error('full_name')
+                <span class="erros mt_10">{{ $message }}</span>
+            @enderror
+            <div class="payment__container-left__form">
+                <div class="payment__container-left__input-info ">
+                <div class="form-fl-2">
+                    <div class="payment__container-left__form-col-2">
+                        <input type="email" value="{{ old('email')  }}" placeholder="Email" class="payment__container-left__input-email" name="email">
+                    </div>
+                    @error('email')
+                        <span class="erros mt_10">{{ $message }}</span>
                     @enderror
                 </div>
                 
-             </div>
-        </div>
-       
-     
-        <div class="payment__container-left__form">
-            <div class="payment__container-left__btn-wrap">
-                <a href="{{ route('index.cart') }}" class="payment__container-left__link--cart">Giỏ hàng</a>
-                <a href="{{ route('payment_method') }}" class="link"><button type="submit" class="btn btn-payment">Tiếp tục đến phương thức thanh toán</button></a>
-              </div>
-        </div>
+                <div class="form-fl-1">
+                        <div class="payment__container-left__form-col-2">
+                            <input type="text" value="{{ old('phone')  }}" placeholder="Số điện thoại" class="payment__container-left__input-phone" name="phone">
+                        </div>
+                        @error('phone')
+                            <span class="erros mt_10">{{ $message }}</span>
+                        @enderror
+                </div>
+                </div>
+            </div>
         
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        @csrf
-    </form>
-    @endif
+            <div class="payment__container-left__form">
+                <input type="text" value="{{ old('address') }}" placeholder="Địa chỉ" class="payment__container-left__input-addres" name="address">
+            </div>
+            @error('address')
+                <span class="erros mt_10">{{ $message }}</span>
+            @enderror
+        
+            <div class="payment__container-left__form">
+                <div class="payment__container-left__select-info">
+                    <div class="form-fl-1" style="margin-right: 10px;">
+                        <div class="payment__container-left__form-col-2">
+                            <select name="city" id="city" class="payment__container-left__select-conscious choose">
+                                <option value="">Chọn tỉnh / thành</option>
+                                @foreach($listCity as $city)
+                                <option value="{{ $city->matp }}">{{ $city->name }}</option>
+                                @endforeach
+                            </select> 
+                        </div>
+                        @error('city')
+                        <span class="erros mt_10">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-fl-1" style="margin-right: 5px;">
+                        <div class="payment__container-left__form-col-2">
+                            <select name="district" id="district" class="payment__container-left__select-district">
+                                <option value="">Chọn quận / huyện</option>
+                            </select>
+                        </div>
+                        @error('district')
+                        <span class="erros mt_10">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    
+                </div>
+            </div>
+        
+        
+            <div class="payment__container-left__form">
+                <div class="payment__container-left__btn-wrap">
+                    <a href="{{ route('index.cart') }}" class="payment__container-left__link--cart">Giỏ hàng</a>
+                    <a href="{{ route('payment_method') }}" class="link"><button type="submit" class="btn btn-payment">Tiếp tục đến phương thức thanh toán</button></a>
+                </div>
+            </div>
+            
+            <meta name="csrf-token" content="{{ csrf_token() }}">
+            @csrf
+        </form>
+        @endif
     </div>
 </div>
 {{-- Ajax --}}
