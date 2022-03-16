@@ -36,6 +36,13 @@ class Product extends Model
         ->get();
         return $product;
      }
+     public function getProductNew() {
+        $product = DB::table(''.$this->table.'')
+        ->orderByDesc('id')
+        ->limit(5)
+        ->get();
+        return $product;
+     }
     public function addProduct($data) {
         return DB::insert('insert into '.$this->table.'
         (product_name, product_image, product_price, category_product_id, description, insurance, series_laptop, status, cpu, ram, rom, card, screnn, 

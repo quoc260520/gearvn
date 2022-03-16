@@ -22,7 +22,7 @@ class Order extends Model
       ->select('id','name_customer', 'email_customer', 'phone_customer', 'address_customer', 'city_id', 'district_id', 'quantity', 'total_price','status','created_at')
       ->where('name_customer','like', '%'.$name.'%')
       ->orderBy('created_at','DESC')
-      ->paginate(10);
+      ->paginate(30);
       return $list;
    }
    public function getOrderWithStatus($status) {
@@ -30,7 +30,7 @@ class Order extends Model
       ->select('id','name_customer', 'email_customer', 'phone_customer', 'address_customer', 'city_id', 'district_id', 'quantity', 'total_price','status','created_at')
       ->where('status','=', $status)
       ->orderBy('created_at','DESC')
-      ->paginate(10);
+      ->paginate(30);
       return $list;
    }
     public function getInfoOrder($id) {

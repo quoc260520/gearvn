@@ -65,7 +65,7 @@ class OrdersController extends Controller
         $data = $this->data;
         $Order = $this->orders->getInfoOrder($id);
         $order = json_decode($Order->info_order, true);
-        //dd($order);
+        dd($order);
 
         return view('admin.orders.order_info',compact('data','user','order'));
     }

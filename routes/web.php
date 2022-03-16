@@ -136,7 +136,7 @@ Route::middleware('check.role')->prefix('admin')->group(function () {
     });
     Route::prefix('orders')->group(function (){
         Route::get('/', [OrdersController::class,'getOrder'])->name('orders');
-        Route::get('/order-info/{id}', [OrderOrdersController::class,'getInfoOrder'])->name('orders.info');
+        Route::get('/order-info/{id}', [OrdersController::class,'getInfoOrder'])->name('orders.info');
         Route::get('/update-order/{id}/{status}', [OrdersController::class,'getUpdate'])->name('orders.post-update');
     });
    
