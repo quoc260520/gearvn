@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class Order extends Model
 {
@@ -29,9 +30,24 @@ class Order extends Model
       $list = DB::table(''.$this->table.'')
       ->select('id','name_customer', 'email_customer', 'phone_customer', 'address_customer', 'city_id', 'district_id', 'quantity', 'total_price','status','created_at')
       ->where('status','=', $status)
-      ->orderBy('created_at','DESC')
-      ->paginate(30);
+      ->orderBy('created_at','DESC');
+      $list = $list->paginate(30)->withQueryString();
       return $list;
+   }
+   public function getTotalPrice($status){
+      $totalPrice = DB::table(''.$this->table.'')
+      ->select('total_price')
+      ->where('status',$status)
+      ->get();
+      return $totalPrice;
+   }
+   public function getTotalPriceMonth($status,$year,$month){
+      $totalPrice = DB::table(''.$this->table.'')
+      ->whereYear('created_at', '=', $year)
+      ->whereMonth('created_at', '=', $month)
+      ->where('status',$status)
+      ->get();
+      return $totalPrice;
    }
     public function getInfoOrder($id) {
       $list = DB::table(''.$this->table.'')
