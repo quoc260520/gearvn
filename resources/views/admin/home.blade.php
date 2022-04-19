@@ -108,7 +108,7 @@
                                     <div class="sale-container">
                                         <div class="sale_block-wrap">
                                             <div class="sale_block error"> 
-                                                <div class="sale_block-text ">{{ $totalS }} M</div>
+                                                <div class="sale_block-text ">{{ $totalS ?? 0}} M</div>
                                             </div> 
                                             <div class="sale_block-info">
                                                 Tổng doanh thu
@@ -116,7 +116,7 @@
                                         </div>
                                         <div class="sale_block-wrap">
                                             <div class="sale_block error"> 
-                                                <div class="sale_block-text ">{{ $totalM }} M</div>
+                                                <div class="sale_block-text ">{{ $totalM ?? 0 }} M</div>
                                             </div> 
                                             <div class="sale_block-info">
                                                  Tháng này
@@ -124,7 +124,7 @@
                                         </div>
                                         <div class="sale_block-wrap">
                                             <div class="sale_block error"> 
-                                                <div class="sale_block-text ">{{ $totalD }} M</div>
+                                                <div class="sale_block-text ">{{ $totalD ?? 0 }} M</div>
                                             </div> 
                                             <div class="sale_block-info">
                                                 Chờ thanh toán
@@ -132,32 +132,44 @@
                                         </div>
                                        
                                     </div>
-                                               
+                                    <div style="border-bottom:1px solid #ccc;height:1px;width:100%;"></div>     
                                     <div class="sale-container">
   
                                        
                                         <div class="sale_block-wrap">
                                             <div class="pick-time">
-                                                <select class="sale" type="date">
-                                                    <option value="">Ngày</option>
-                                                    @for ($i = 1; $i < 32; $i++)
-                                                    <option value="{{ $i }}">{{ $i }}</option>
-                                                    @endfor
-                                                </select>
-                                                <select class="sale" type="date">
-                                                    <option value="">Tháng</option>
-                                                    @for ($i = 1; $i < 32; $i++)
-                                                    <option value="{{ $i }}">{{ $i }}</option>
-                                                    @endfor
-                                                </select>
-                                                <select class="sale" id="" type="date">
-                                                    <option value="">Năm</option>
-                                                </select>
-                                                <input type="date" name="" id="datepicker">
+                                                <form action="" method="get" style="display: flex;">
+                                                        <div class="sale_form">
+                                                            <label for="">Ngày</label>
+                                                            
+                                                            <select class="sale_select" type="date" name="date">
+                                                                <option value="">Ngày</option>
+                                                                @for ($i = 1; $i < 32; $i++)
+                                                                <option value="{{ $i }}">{{ $i }}</option>
+                                                                @endfor
+                                                            </select>
+                                                        </div>
+                                                        <div class="sale_form">
+                                                            <label for="">Tháng</label>
+                                                            <select class="sale_select" type="date" name="month">
+                                                                <option value="">Tháng</option>
+                                                                @for ($i = 1; $i < 13; $i++)
+                                                                <option value="{{ $i }}">{{ $i }}</option>
+                                                                @endfor
+                                                            </select>
+                                                        </div>
+                                                        <div class="sale_form">
+                                                            <label for="">Năm</label>
+                                                            <input type="text" name="year" id="" value="{{ now()->year }}" class="sale_select">
+                                                        
+                                                        </div>  
+                                                        <button class="btn" type="submit" style="margin-left:20px;">Xem doanh thu</button>
+                                                   
+                                                </form>
                                             </div>
                                            
                                             <div class="sale_block error"> 
-                                                <div class="sale_block-text ">{{ $totalD }} M</div>
+                                                <div class="sale_block-text ">{{ $totalRevenueOverTime }} M</div>
                                             </div> 
                                             <div class="sale_block-info">
                                                 Doanh thu
@@ -172,12 +184,6 @@
                             </div>
                         </div>
                     </div>
+                   
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script> 
-$("#datepicker").datepicker({
-    changeMonth: true,
-    changeYear: true,
-    yearRange: "1930:2010"
-});</script>
 @endsection

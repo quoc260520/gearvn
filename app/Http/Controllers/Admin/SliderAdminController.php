@@ -6,7 +6,7 @@ use App\Http\Requests\SliderRequest;
 use App\Models\SliderTop;
 use App\Models\Product;
 use App\Models\SliderFlashSale;
-use App\Models\SliderTopPc;
+use App\Models\SliderTopPC;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class SliderAdminController extends Controller
         $this->sliderTop = new SliderTop();
         $this->product = new Product();
         $this->sliderFlashSale = new SliderFlashSale();
-        $this->sliderTopPc = new SliderTopPc();
+        $this->sliderTopPc = new SliderTopPC();
     }
     public function getSliderTop(){
         $this->data['title'] = 'Slider Top';

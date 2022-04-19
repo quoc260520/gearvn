@@ -71,7 +71,8 @@ class OrdersController extends Controller
     public function getUpdate($id,$status){
         if(!empty($id)){
             if(!empty($status)){
-                $this->orders->updateOrder($id,$status);
+                $date = date('Y-m-d H:i:s');
+                $this->orders->updateOrder($id,$status,$date);
                 return back();
             }
         }

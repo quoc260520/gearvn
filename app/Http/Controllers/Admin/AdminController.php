@@ -48,6 +48,7 @@ class AdminController extends Controller
         $totalS =(string)$totalS;
         $len = strlen($totalS) - 6;
         $totalS=substr( $totalS, 0, $len );
+        $totalS=$totalS ? $totalS : 0;
         
         //
 
@@ -62,6 +63,7 @@ class AdminController extends Controller
         $totalD =(string)$totalD;
         $len = strlen($totalD) - 6;
         $totalD=substr( $totalD, 0, $len );
+        $totalD=$totalD ? $totalD : 0;
 
         //
 
@@ -77,10 +79,60 @@ class AdminController extends Controller
         $totalM =(string)$totalM;
         $len = strlen($totalM) - 6;
         $totalM=substr( $totalM, 0, $len );
-        
+        $totalM=$totalM ? $totalM : 0;
+
+
+
+        if(!empty($request->date)&&!empty($request->month)&&!empty($request->year)){
+            $date = $request->date;
+            $month =$request->month;
+            $year = $request->year;
+            $revenueOverTime = $this->order->getTotalPriceWithTime(3,$date,$month,$year);
+            $totalY= 0;
+            foreach($revenueOverTime as $total){
+            $price = $total->total_price;
+            $price = (int)str_replace('.','',$price);
+            $totalY += $price;
+            }
+            $totalY =(string)$totalY;
+            $len = strlen($totalY) - 6;
+            $totalY=substr( $totalY, 0, $len );
+            $totalRevenueOverTime = $totalY ? $totalY : 0;
+        }else if(!empty($request->month)&&!empty($request->year)){
+            $month = $request->month;
+            $year = $request->year;
+            $revenueOverTime = $this->order->getTotalPriceMonth(3,$year,$month);
+            $totalY= 0;
+            foreach($revenueOverTime as $total){
+            $price = $total->total_price;
+            $price = (int)str_replace('.','',$price);
+            $totalY += $price;
+            }
+            $totalY =(string)$totalY;
+            $len = strlen($totalY) - 6;
+            $totalY=substr( $totalY, 0, $len );
+            $totalRevenueOverTime = $totalY ? $totalY : 0;
+        }else if(!empty($request->year)){
+            $month = $request->month;
+            $year = $request->year;
+
+            $revenueOverTime = $this->order->getTotalPriceYear(3,$year);
+            $totalY= 0;
+            foreach($revenueOverTime as $total){
+            $price = $total->total_price;
+            $price = (int)str_replace('.','',$price);
+            $totalY += $price;
+            }
+            $totalY =(string)$totalY;
+            $len = strlen($totalY) - 6;
+            $totalY=substr( $totalY, 0, $len );
+            $totalRevenueOverTime = $totalY ? $totalY : 0;
+            ($totalRevenueOverTime);
+        }
+        $totalRevenueOverTime = $totalRevenueOverTime ?? 0;
        
         return view('admin.home',compact('data','user','listUser','listProducts','listProductsNew',
-        'listOrderWait','listOrderSuccess','listOrderDelivery','listOrder','totalS','totalD','totalM'));
+        'listOrderWait','listOrderSuccess','listOrderDelivery','listOrder','totalS','totalD','totalM','totalRevenueOverTime'));
     }
 
 }

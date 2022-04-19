@@ -33,6 +33,7 @@
                             <td>{{ $order->phone_customer}}</td>
                             <td>{{ $order->address_customer}}</td>
                             <td>{{ $order->total_price}}</td>
+
                             <td>{{ $order->created_at }}</td>
                             @if($order->status == 1)
                               <td><a onclick="return confirm('Xác nhận đơn hàng? ')" href="{{ route('orders.post-update',['id' => $order->id,'status'=>$order->status])}}" class="btn-warning">Chờ xác nhận</a></td>
